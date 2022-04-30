@@ -31,8 +31,8 @@ export default {
     Topnav,
   },
   setup(){
-    const asideVisible = inject('xxx')
-    console.log('doc获取的asideVisible是'+asideVisible)
+    const asideVisible = inject('asideVisible')
+    console.log('doc获取的asideVisible是'+asideVisible.value)
     return {asideVisible}
   }
 }
