@@ -1,9 +1,17 @@
 <template>
   <router-view />
 </template>
+<script lang="ts">
+import { ref, provide } from 'vue'
 
-<script>
 export default {
   name: 'App',
+  setup(){
+    const asideVisible = ref(true)
+    provide('asideVisible', asideVisible) // set
+    console.log(asideVisible.value)
+    
+  }
 }
 </script>
+

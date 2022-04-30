@@ -1,12 +1,26 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo" @click="toggleMenu">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
   </div>
 </template>
+<script>
+import { inject, ref } from 'vue'
+
+export default {
+   setup(){
+    const asideVisible = inject('asideVisible') // get
+    console.log('top获取的av'+asideVisible.value);
+    const toggleMenu = ()=>{
+      asideVisible.value = !asideVisible.value
+    }
+    return {toggleMenu}
+  } 
+}
+</script>
 <style lang="scss" scoped>
 .topnav {
   background: pink;
