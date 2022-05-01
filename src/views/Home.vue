@@ -17,7 +17,6 @@ export default {
   components: {
     Topnav,
   },
-
 }
 </script>
 <style lang="scss" scoped>
