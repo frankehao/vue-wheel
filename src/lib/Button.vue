@@ -1,11 +1,16 @@
 <template>
-  <div>我是按钮</div>
+  <button class="gulu-button" :class="{ [`theme-${theme}`]: theme }">
+    按钮
+  </button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  setup() {
-    return {}
+  props: {
+    theme: {
+      type: String,
+      default: 'button',
+    },
   },
 }
 </script>
