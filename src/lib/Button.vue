@@ -1,13 +1,9 @@
 <template>
-  <div><Button /></div>
+  <div>我是按钮</div>
 </template>
 
 <script>
-import Button from '../lib/Button.vue'
 export default {
-  components: {
-    Button,
-  },
   setup() {
     return {}
   },
