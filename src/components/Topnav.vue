@@ -14,7 +14,6 @@ import { inject, ref } from 'vue'
 export default {
   setup() {
     const asideVisible = inject('asideVisible') // get
-    console.log('top获取的av' + asideVisible.value)
     const toggleMenu = () => {
       asideVisible.value = !asideVisible.value
     }
