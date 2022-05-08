@@ -1,8 +1,5 @@
 <template>
-  <div></div>
+  <div>
+    <slot />
+  </div>
 </template>
-
-<script lang="ts">
-export default {}
-</script>
-<style scoped></style>
