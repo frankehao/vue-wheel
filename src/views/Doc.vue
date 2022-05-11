@@ -3,6 +3,13 @@
     <Topnav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="asideVisible">
+        <h2>文档</h2>
+        <ol>
+          <li><router-link to="/doc/intro">介绍</router-link></li>
+          <li><router-link to="/doc/install">安装</router-link></li>
+          <li><router-link to="/doc/get-started">开始使用</router-link></li>
+        </ol>
+
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -37,6 +44,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.router-link-active {
+  text-decoration: underline;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -73,6 +83,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: 10;
   > h2 {
     margin-bottom: 4px;
   }
