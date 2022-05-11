@@ -1,19 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="gulu-dialog-overlay"></div>
-    <div class="gulu-dialog-wrapper">
-      <div class="gulu-dialog">
-        <header>标题 <span class="gulu-dialog-close"></span></header>
-        <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
-        </main>
-        <footer>
-          <Button level="main">OK</Button>
-          <Button>Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="gulu-dialog-overlay" @click="OnClickOverlay"></div>
+      <div class="gulu-dialog-wrapper">
+        <div class="gulu-dialog">
+          <header>
+            <slot name="title"></slot>
+            <span class="gulu-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -21,13 +25,44 @@
 import Button from './Button.vue'
 export default {
   props: {
+    title: { type: String, default: '提示' },
     visible: {
       type: Boolean,
       default: false,
     },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     Button,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false)
+    }
+    const OnClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close()
+      }
+    }
+    const ok = () => {
+      if (props.ok() !== false) {
+        close()
+      }
+    }
+    const cancel = () => {
+      props.cancel?.()
+      close()
+    }
+    return { close, OnClickOverlay, ok, cancel }
   },
 }
 </script>
