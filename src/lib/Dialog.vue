@@ -12,8 +12,8 @@
             <slot name="content"></slot>
           </main>
           <footer>
-            <Button level="main" @click="ok">OK</Button>
-            <Button @click="cancel">Cancel</Button>
+            <Button level="main" @click="onClickOk">OK</Button>
+            <Button @click="onClickCancel">Cancel</Button>
           </footer>
         </div>
       </div>
@@ -53,16 +53,16 @@ export default {
         close()
       }
     }
-    const ok = () => {
+    const onClickOk = () => {
       if (props.ok && props.ok() !== false) {
         close()
       }
     }
-    const cancel = () => {
+    const onClickCancel = () => {
       props.cancel && props.cancel()
       close()
     }
-    return { close, OnClickOverlay, ok, cancel }
+    return { close, OnClickOverlay, onClickOk, onClickCancel }
   },
 }
 </script>

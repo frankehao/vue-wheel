@@ -4,7 +4,7 @@
 
 ```
 
-npm install king-ui
+npm install gulu-ui-hao
 
 ```
 
@@ -12,7 +12,7 @@ npm install king-ui
 
 ```
 
-yarn add king-ui
+yarn add gulu-ui-hao
 
 ```
 
