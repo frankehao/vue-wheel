@@ -6,7 +6,7 @@
         <h1>轱辘UI</h1>
         <h2>一个很面向学习者的UI框架</h2>
         <p class="actions">
-          <a href="">Github</a>
+          <a href="https://github.com/frankehao/vue-wheel.git">Github</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -60,6 +60,7 @@ $color: #007974;
   background-repeat: no-repeat;
 }
 .features {
+  width: 1200px;
   margin: 64px auto;
   padding: 0 16px;
   @media (min-width: 800px) {
