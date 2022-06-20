@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="topnavAndBanner">
-      <Topnav />
+      <Topnav/>
       <div class="banner">
-        <h1>轱辘UI</h1>
+        <h1>橙子UI</h1>
         <h2>一个很面向学习者的UI框架</h2>
         <p class="actions">
           <a href="https://github.com/frankehao/vue-wheel.git">Github</a>
@@ -22,10 +22,10 @@
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-ts"></use>
+            <use xlink:href="#icon-design"></use>
           </svg>
-          <h3>基于 TypeScript</h3>
-          <p>源代码采用 TypeScript 书写</p>
+          <h3>可复用性高</h3>
+          <p>样式设计合理，你可以轻松覆盖样式</p>
         </li>
         <li>
           <svg>
@@ -39,12 +39,13 @@
   </div>
 </template>
 <script lang="ts">
-import Topnav from '../components/Topnav.vue'
+import Topnav from '../components/Topnav.vue';
+
 export default {
   components: {
     Topnav,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 $green: #02bcb0;
@@ -52,13 +53,14 @@ $border-radius: 4px;
 $color: #007974;
 .topnavAndBanner {
   background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
+          145deg,
+          rgba(227, 255, 253, 1) 0%,
+          rgba(183, 233, 230, 1) 100%
   );
   clip-path: ellipse(80% 60% at 50% 40%);
   background-repeat: no-repeat;
 }
+
 .features {
   width: 1200px;
   margin: 64px auto;
@@ -77,9 +79,11 @@ $color: #007974;
       }
     }
   }
+
   > ul {
     display: flex;
     flex-wrap: wrap;
+
     > li {
       margin: 16px 0;
       display: grid;
@@ -90,21 +94,25 @@ $color: #007974;
         'icon text';
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr auto;
+
       > svg {
         grid-area: icon;
         width: 64px;
         height: 64px;
       }
+
       > h3 {
         grid-area: title;
         font-size: 28px;
       }
+
       > p {
         grid-area: text;
       }
     }
   }
 }
+
 .banner {
   color: $color;
   padding: 100px 0;
@@ -112,8 +120,10 @@ $color: #007974;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   > .actions {
     padding: 8px 0;
+
     a {
       margin: 0 8px;
       background: $green;
@@ -121,6 +131,7 @@ $color: #007974;
       border-radius: $border-radius;
       display: inline-block;
       padding: 8px 24px;
+
       &:hover {
         text-decoration: none;
       }

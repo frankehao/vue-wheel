@@ -2,7 +2,7 @@
   <div class="topnav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-king"></use>
+        <use xlink:href="#icon-chengzi"></use>
       </svg>
     </router-link>
     <ul class="menu">
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import { inject, ref } from 'vue'
+import {inject, ref} from 'vue'
 
 export default {
   props: {
@@ -30,7 +30,7 @@ export default {
     const toggleMenu = () => {
       asideVisible.value = !asideVisible.value
     }
-    return { toggleMenu }
+    return {toggleMenu}
   },
 }
 </script>
@@ -47,22 +47,34 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
+
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+
+
     > svg {
-      width: 32px;
-      height: 32px;
+      width: 35px;
+      height: 35px;
+
+
     }
   }
+
   > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+
     > li {
       margin: 0 1em;
     }
   }
+
   > .toggleAside {
     width: 24px;
     height: 24px;
@@ -73,6 +85,7 @@ $color: #007974;
     display: none;
     background: fade-out(black, 0.9);
   }
+
   @media (max-width: 500px) {
     > .menu {
       display: none;
